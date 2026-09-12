@@ -1,0 +1,19 @@
+{
+  "name": "appointment-booking-api",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "check": "node --check server.js && node --check src/app.js && node --check src/controllers/appointment.controller.js && node --check src/controllers/doctor.controller.js && node --check src/controllers/ai.controller.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^5.1.0",
+    "openai": "^5.20.0",
+    "pg": "^8.13.3"
+  }
+}

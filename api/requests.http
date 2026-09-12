@@ -1,0 +1,51 @@
+@baseUrl = http://localhost:5000/api
+
+### Health
+GET {{baseUrl}}/health
+
+### Doctors
+GET {{baseUrl}}/doctors
+
+### Appointments
+GET {{baseUrl}}/appointments
+
+### Create appointment
+POST {{baseUrl}}/appointments
+Content-Type: application/json
+
+{
+  "patient_name": "Demo Patient",
+  "mobile_number": "9876543210",
+  "doctor_id": 1,
+  "appointment_date": "2026-09-14",
+  "appointment_time": "10:30",
+  "reason_for_visit": "Routine check-up and mild headache.",
+  "ai_summary": null
+}
+
+### Complete appointment (replace 1 with a real ID)
+PATCH {{baseUrl}}/appointments/1/status
+Content-Type: application/json
+
+{
+  "status": "Completed"
+}
+
+### Cancel appointment
+PATCH {{baseUrl}}/appointments/1/status
+Content-Type: application/json
+
+{
+  "status": "Cancelled"
+}
+
+### Generate AI summary
+POST {{baseUrl}}/ai/summary
+Content-Type: application/json
+
+{
+  "reason_for_visit": "Mild headache since yesterday and wants a routine consultation."
+}
+
+### Delete appointment
+DELETE {{baseUrl}}/appointments/1
